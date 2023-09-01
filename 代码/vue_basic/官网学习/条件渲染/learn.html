@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Vue中的数据代理</title>
+    <!-- 引入Vue -->
+    <script type="text/javascript" src="../../js/vue.js"></script>
+</head>
+
+<body>
+    <template v-if="loginType === 'username'">
+        <label>Username</label>
+        <input placeholder="Enter your username">
+    </template>
+    <template v-else>
+        <label>Email</label>
+        <input placeholder="Enter your email address">
+    </template>
+</body>
+
+<script type="text/javascript">
+    Vue.config.productionTip = false //阻止 vue 在启动时生成生产提示。
+
+    var app7 = new Vue({
+        el: '#app',
+        data: {
+            activeColor: 'red',
+            fontSize: 30
+        }
+    })
+</script>
+
+</html>

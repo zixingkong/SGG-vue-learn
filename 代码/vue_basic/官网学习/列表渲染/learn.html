@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Vue中的数据代理</title>
+    <!-- 引入Vue -->
+    <script type="text/javascript" src="../../js/vue.js"></script>
+</head>
+
+<body>
+    <ul id="v-for-object" v-for="set in sets">
+        <li v-for="n in even(set)">{{ n }}</li>
+    </ul>
+</body>
+
+<script type="text/javascript">
+    Vue.config.productionTip = false //阻止 vue 在启动时生成生产提示。
+
+    new Vue({
+        el: '#v-for-object',
+        data: {
+            sets: [
+                [1, 2, 3, 4, 5],
+                [6, 7, 8, 9, 10]
+            ]
+        },
+        methods: {
+            even: function (numbers) {
+                return numbers.filter(function (number) {
+                    return number % 2 === 0
+                })
+            }
+        }
+    })
+</script>
+
+</html>
